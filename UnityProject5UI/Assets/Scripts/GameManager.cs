@@ -16,18 +16,7 @@ public class GameManager : MonoBehaviour
 
     private int score;
     private float spawnRate = 1.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+   
     IEnumerator SpawnTargets()
     {
         while (isGameActive)
@@ -35,8 +24,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(spawnRate);
             int index = Random.Range(0, targets.Count);
             Instantiate(targets[index]);
-        }
-        
+        }      
     }
 
     public void UpdateScore(int scoreToAdd)
@@ -62,10 +50,8 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         score = 0;
         spawnRate /= difficulty;
-
         StartCoroutine(SpawnTargets());
         UpdateScore(0);
-
         titleScreen.gameObject.SetActive(false);
     }
 }
