@@ -26,12 +26,7 @@ public class Target : MonoBehaviour
 
         transform.position = RandomSpawnPos();
     }
-
-    void Update()
-    {
-        
-    }
-
+    
     private void OnMouseDown()
     {
         if (gameManager.isGameActive)
